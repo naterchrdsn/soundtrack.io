@@ -125,6 +125,12 @@ footer {
 #chat-form .input-block-level {
   width: 464px;
 }
+.emoji {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    margin-bottom: -0.25em;
+}
 
 @media (max-width: 1199px) {
   #chat-form .input-block-level {

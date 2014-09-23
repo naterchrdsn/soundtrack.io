@@ -27,6 +27,7 @@ html(lang="en-US", ng-app)
     script(src="/js/vjs.youtube.js")
     script(src="/js/sockjs-0.3.min.js")
     script(src="/js/app.js")
+    script(src="/js/emojify.js")
 
     if (user)
       script
@@ -48,6 +49,20 @@ html(lang="en-US", ng-app)
           var firstScript = document.getElementsByTagName('script')[0];
           firstScript.parentNode.insertBefore(script, firstScript);
       })();
+    script
+      emojify.setConfig({
+        emojify_tag_type : 'div',
+        only_crawl_id    : 'messages',
+        img_dir          : 'img/emoji',
+        ignored_tags     : { 
+            'SCRIPT'  : 1,
+            'TEXTAREA': 1,
+            'A'       : 1,
+            'PRE'     : 1,
+            'CODE'    : 1
+        }
+      });
+      emojify.run();
 
     base
 
